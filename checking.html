@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyntrixa Outsource IT Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        rel="stylesheet"
+      />
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+    <link rel="icon" type="image/x-icon" href="/img/title.png">
+
+</head>
+<body >
+
+  
+  <!-- ========== PRELOADER START ========== -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="img/logo.png" alt="Vyntrixa" class="loader-logo" />
+      
+      
+    </div>
+  </div>
+
+  <style>
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+        background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 2s ease, visibility 2s ease;
+    }
+    .loader-logo {
+      width: 140px;
+      animation: pulse 1.5s ease-in-out infinite alternate;
+    }
+    
+    .preloader-hidden {
+      opacity: 0.2;
+      visibility: hidden;
+    }
+  </style>
+
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("preloader-hidden");
+      setTimeout(() => preloader.style.display = "none", 9999);
+    });
+  </script>
+  <!-- ========== PRELOADER END ========== -->
+
+  </div>
+         <header>
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold" href="#">
+        <img data-aos="fade-down" data-aos-duration="1500"
+          src="img/logo.png"
+          alt="LOGO"
+          class="logo-img"
+        />
+      </a>
+
+      <!-- Toggler & Icons (Mobile) -->
+      <div class="d-flex align-items-center ms-auto d-md-none">
+        <button class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-icons">
+          <i class="fa-solid fa-phone-volume"></i>
+          <i class="fa-solid fa-message"></i>
+        </div>
+      </div>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto"> <!-- ms-auto moves to right -->
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="1500" href="#">About Us</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2000" href="#">Services</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2500" href="#">Portfolio</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="#">Blogs</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="#">Insights</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="#">Contact</a>
+        </div>
+
+        <div class="navbar-icons d-none d-md-flex ms-3">
+          <a href="/contact.html"><i class="fa-solid fa-phone-volume" data-aos="fade-down" data-aos-duration="1500"></i></a>
+          <a href="/contact.html"><i class="fa-solid fa-message" data-aos="fade-down" data-aos-duration="1500"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+<style>
+.navbar {
+  padding: 20px 50px;
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+}
+.logo-img {
+  max-height: 60px;
+  margin-top: 2px;
+}
+.nav-link {
+  margin: 0 10px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "AvertalB", sans-serif;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #2e3090;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+.nav-link:hover {
+  color: #1469b1;
+}
+.nav-link:hover::after {
+  width: 100%;
+  animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
+}
+.navbar-icons i {
+  font-size: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #1469b1;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.navbar-icons i:hover {
+  color: #fff;
+}
+</style>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</header>
+
+
+
+<!-- Hero Section -->
+  <section class="py-5  position-relative overflow-hidden" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+       <h1 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+            data-aos-duration="1500" class="fw-bold" style="font-size: 50px; line-height: 3rem; color: #2e3090; font-family:AvertalB , sans-serif" , >
+            WHERE IDEAS <br />
+            TURN INTO IMPACT 
+          </h1>
+
+          <p class="mt-3" style="color: #494848; font-size: 1.2rem" data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-duration="2000">
+            One of the best customer service outsourcing <br />
+            companies across the World.
+          </p>
+          <p class="mt-3" style="color: #2e3090; font-size: 1.3rem" data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-duration="2500">
+            At Vyntrixa, we provide end-to-end outsourcing solutions <br>
+            that empower businesses to scale faster, reduce costs, <br>
+            and stay focused on what truly matters — innovation. <br>
+             Our team ensures round-the-clock project execution <br> 
+            with unmatched quality and precision.
+        
+          </p>
+ 
+           <button class="btn btn mt-3" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+            data-aos-offset="0" data-aos-duration="2500">
+            Get a Quote
+          </button> 
+
+          <div class="d-flex align-items-center gap-5 mt-4 justify-content-center justify-content-md-start"
+            data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+            data-aos-duration="1500">
+            <img src="https://outsourceitprojects.com/assets/home/certifications.png" alt="ISO" class="img-fluid"
+              style="height: 60px" />
+            <img src="https://outsourceitprojects.com/assets/home/icon/google.png" alt="Google Partner"
+              class="img-fluid" style="height: 40px" />
+            <img src="https://outsourceitprojects.com/assets/home/icon/bing.png" alt="Bing" class="img-fluid"
+              style="height: 40px" />
+          </div>
+          
+        </div>
+        <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+          data-aos-delay="300" data-aos-offset="0" data-aos-duration="2500">
+         <div class="tech-scene">
+    <div class="monitor">
+      <div class="screen">
+  <div class="bouncing-text" >VYNTRIXA</div>
+  <div class="code-lines"></div>
+  <div class="scan-line"></div>
+</div>
+
+      <div class="stand"></div>
+    </div>
+    <div class="keyboard"></div>
+    <div class="mouse"></div>
+  </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>AOS.init({ duration: 1000, once: true });</script>
+        </div>
+
+  
+      </section>
+
+      
+      <style>
+ #hero {
+   position: relative;
+   background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+   overflow: hidden;
+ }
+
+ #heroCanvas {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+ }
+  .tech-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  position: relative;
+}
+
+/* === Monitor === */
+.monitor {
+  width: 320px;
+  height: 180px;
+  border: 2px solid #f8fbff;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* === Screen === */
+.screen {
+  width: 100%;
+  height: 100%;
+   background: radial-gradient(circle at top left, #1469b1 0%, #fff 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* === Code Lines Animation === */
+/* === Bouncing Text Animation === */
+.bouncing-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 10%);
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1d1d1d;
+  text-shadow: 0 0 10px rgba(255, 255, 254, 0.8);
+  user-select: none;
+}
+
+/* === Scan Line === */
+.scan-line {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, rgba(34, 115, 182, 0.25), transparent);
+  animation: scanMove 2.8s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { top: -30%; }
+  100% { top: 120%; }
+}
+
+
+/* === Keyboard === */
+.keyboard {
+  width: 280px;
+  height: 30px;
+  background: radial-gradient(circle at top left, #1469b1 0%, #2e3090 100%);
+  margin-top: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(250, 172, 55, 0.25);
+  animation: keypress 2.5s infinite ease-in-out;
+}
+
+@keyframes keypress {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* === Mouse === */
+.mouse {
+  width: 50px;
+  height: 70px;
+  background: radial-gradient(circle at top left, #1469b1 0%, #fff 100%);
+  border-radius: 30px;
+  margin-top: 15px;
+  box-shadow: 0 0 20px rgba(250, 172, 55, 0.35);
+  position: relative;
+  animation: click 2s infinite ease-in-out;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 18px;
+  background: #111;
+  border-radius: 2px;
+}
+
+
+
+
+/* Button */
+.btn {
+  background-color: #1469b1;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2e3090;
+  color: #fff;
+}
+
+
+</style>
+  <!-- Particle Background Script -->
+<script>
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let w, h;
+
+  function resizeCanvas() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = document.getElementById('hero').offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.vx = (Math.random() - 0.2) * 0.2; // 👈 slower motion
+      this.vy = (Math.random() - 0.2) * 0.2;
+      this.size = Math.random() * 2 + 1;
+    }
+
+    move() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > w) this.vx *= -1;
+      if (this.y < 0 || this.y > h) this.vy *= -1;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(20,105,177,0.5)'; // 👈 lighter particle
+      ctx.fill();
+    }
+  }
+
+  function connect(p1, p2) {
+    const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+    if (dist < 120) {
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(20,105,177,${(1 - dist / 120) * 0.15})`; // 👈 softer line opacity
+      ctx.lineWidth = 0.8;
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+    }
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].move();
+      particles[i].draw();
+      for (let j = i + 1; j < particles.length; j++) {
+        connect(particles[i], particles[j]);
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  initParticles();
+  animate();
+</script>
+
+<script>
+  const text = document.querySelector('.bouncing-text');
+  const screen = document.querySelector('.screen');
+
+  let x = 50, y = 50; // Starting position (in %)
+  let dx = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random horizontal speed
+  let dy = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random vertical speed
+
+  function animateText() {
+    const rect = screen.getBoundingClientRect();
+    const textRect = text.getBoundingClientRect();
+
+    x += dx;
+    y += dy;
+
+    // bounce horizontally
+    if (x <= 0 || x + textRect.width >= rect.width) {
+      dx = -dx;
+      text.style.color = getRandomColor(); // change color on bounce
+    }
+
+    // bounce vertically
+    if (y <= 0 || y + textRect.height >= rect.height) {
+      dy = -dy;
+      text.style.color = getRandomColor();
+    }
+
+    text.style.left = `${x}px`;
+    text.style.top = `${y}px`;
+
+    requestAnimationFrame(animateText);
+  }
+
+  function getRandomColor() {
+    const colors = ['#fff', '#1469b1', '#2e3090', '#1d1d1d'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  animateText();
+
+</script>
+
+
+</body>
+</html>
