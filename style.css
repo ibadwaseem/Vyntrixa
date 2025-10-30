@@ -1,0 +1,416 @@
+/* Preloader Started */
+
+        #preloader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(
+            circle at top left,
+            #e9f2ff 0%,
+            #f8fbff 100%
+          );
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          z-index: 9999;
+          transition: opacity 2s ease, visibility 2s ease;
+        }
+        .loader-logo {
+          width: 140px;
+          animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+        .preloader-hidden {
+          opacity: 0.2;
+          visibility: hidden;
+        }
+    
+
+/* PreLoader Ended */
+
+
+    
+/* Navber Started */
+        .navbar {
+          padding: 17px 50px;
+          background: radial-gradient(
+            circle at top left,
+            #e9f2ff 0%,
+            #f8fbff 100%
+          );
+        }
+        .logo-img {
+          max-height: 60px;
+          margin-top: 1px;
+        }
+        .nav-link {
+          margin: 0 10px;
+          font-weight: 700;
+          position: relative;
+          overflow: hidden;
+          transition: color 0.3s ease;
+          font-size: 0.9rem;
+          color: #000;
+          font-family: "AvertalB", sans-serif;
+          transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          background-color: #2e3090;
+          width: 0%;
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover {
+          color: #1469b1;
+        }
+        .nav-link:hover::after {
+          width: 100%;
+          animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
+        }
+        .navbar-icons i {
+          font-size: 1rem;
+          margin-left: 10px;
+          cursor: pointer;
+          color: #fff;
+          background-color: #1469b1;
+          padding: 8px;
+          border-radius: 50%;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+        }
+        .navbar-icons i:hover {
+          color: #fff;
+        }
+        /* Mobile Icons ko ab d-flex align-items-center waley div mein adjust kar diya gaya hai */
+        @media (max-width: 768px) {
+          .navbar-nav {
+            margin-top: 10px;
+            text-align: center;
+          }
+          .navbar-icons.d-flex {
+            display: none !important;
+          }
+        }
+        /* Hide icons on mobile */
+
+        @media (max-width: 768px) {
+          .navbar-icons {
+            display: none !important;
+          }
+        }
+    
+/* Navbar Ended */
+
+/* Hero Started */
+  /* Hero Styles */
+        #hero {
+          position: relative;
+          background: radial-gradient(
+            circle at top left,
+            #e9f2ff 0%,
+            #f8fbff 100%
+          );
+          overflow: hidden;
+        }
+        #heroCanvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+        .tech-scene {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 450px;
+          position: relative;
+        }
+        .monitor {
+          width: 320px;
+          height: 180px;
+          border: 2px solid #f8fbff;
+          border-radius: 12px;
+          position: relative;
+          overflow: hidden;
+          animation: float 3.5s ease-in-out infinite;
+        }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        .screen {
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(
+            circle at top left,
+            #1469b1 0%,
+            #fff 100%
+          );
+          overflow: hidden;
+          position: relative;
+        }
+        .bouncing-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(0%, 10%);
+          font-family: "Courier New", monospace;
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: #1d1d1d;
+          text-shadow: 0 0 10px rgba(255, 255, 254, 0.8);
+          user-select: none;
+        }
+        .scan-line {
+          position: absolute;
+          top: -20%;
+          left: 0;
+          width: 100%;
+          height: 25%;
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(34, 115, 182, 0.25),
+            transparent
+          );
+          animation: scanMove 2.8s linear infinite;
+        }
+        @keyframes scanMove {
+          0% {
+            top: -30%;
+          }
+          100% {
+            top: 120%;
+          }
+        }
+        .keyboard {
+          width: 280px;
+          height: 30px;
+          background: radial-gradient(
+            circle at top left,
+            #1469b1 0%,
+            #2e3090 100%
+          );
+          margin-top: 25px;
+          border-radius: 8px;
+          box-shadow: 0 0 20px rgba(250, 172, 55, 0.25);
+          animation: keypress 2.5s infinite ease-in-out;
+        }
+        @keyframes keypress {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(3px);
+          }
+        }
+        .mouse {
+          width: 50px;
+          height: 70px;
+          background: radial-gradient(
+            circle at top left,
+            #1469b1 0%,
+            #fff 100%
+          );
+          border-radius: 30px;
+          margin-top: 15px;
+          box-shadow: 0 0 20px rgba(250, 172, 55, 0.35);
+          position: relative;
+          animation: click 2s infinite ease-in-out;
+        }
+        .mouse::before {
+          content: "";
+          position: absolute;
+          top: 18px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3px;
+          height: 18px;
+          background: #111;
+          border-radius: 2px;
+        }
+        .btn {
+          background-color: #1469b1;
+          color: #fff;
+          font-weight: 500;
+          padding: 10px 20px;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+        }
+        .btn:hover {
+          background-color: #2e3090;
+          color: #fff;
+        }
+        @media (max-width: 768px) {
+          .py-05 {
+            margin-top: 60px;
+            text-align: center;
+          }
+          .py-05 img {
+            margin-top: 20px;
+            max-width: 90%;
+          }
+          .py-05 .d-flex {
+            justify-content: center;
+          }
+        }
+      
+
+/* Hero Ended */
+
+/* Why Vyntrixa Starded */
+
+
+        /* Why Vyntrixa Styles */
+        .why-vyntrixa {
+          padding: 40px 0;
+          background: linear-gradient(135deg, #2e3090, #1469b1, #fff);
+          color: #fff;
+        }
+        .why-title {
+          font-size: 2.5rem;
+          font-family: "AvertalB", sans-serif;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        .list {
+          list-style: none;
+          padding: 0px;
+          margin: 0;
+        }
+        .list li {
+          font-size: 16px;
+          margin-bottom: 15px;
+          margin-left: 10%;
+          align-items: center;
+          color: #fff;
+        }
+        .list i {
+          color: #00ff7f;
+          margin-right: 10px;
+          font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+          .why-vyntrixa {
+            margin-top: 60px;
+            text-align: center;
+          }
+          .why-vyntrixa .d-flex {
+            justify-content: center;
+          }
+        }
+  /* Why Vyntrixa Ended */
+
+
+
+  /* E-commerce Started */
+ /* E-commerce Styles */
+        .ecommerce-section {
+          background: white;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .ecom-card {
+          height: 280px;
+          background-size: cover;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 20px;
+          color: #ffffff;
+          font-weight: 400;
+          font-size: 18px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+        .ecom-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+        .ecom-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, #1469b1, #0000000d);
+          z-index: 1;
+        }
+        .ecom-overlay.dark {
+          background: linear-gradient(to top, #1469b1, rgba(0, 0, 0, 0.1));
+        }
+        .ecom-card-text {
+          position: relative;
+          z-index: 2;
+          line-height: 1.4;
+        }
+        .ecom-card .btn-learn {
+          position: relative;
+          z-index: 2;
+          margin-top: 12px;
+          background: #2e3090;
+          color: white;
+          padding: 8px 16px;
+          border: none;
+          font-size: 14px;
+          border-radius: 30px;
+          font-weight: 500;
+          transition: 0.3s ease;
+          opacity: 0;
+          visibility: hidden;
+        }
+        .ecom-card:hover .btn-learn {
+          opacity: 1;
+          visibility: visible;
+        }
+        .ecom-card.active .btn-learn {
+          opacity: 1;
+          visibility: visible;
+        }
+        .text-muted {
+          font-size: small;
+          color: #494848 !important;
+        } /* Color corrected for visibility */
+        @media (max-width: 768px) {
+          .ecom-card {
+            height: 220px;
+            font-size: 16px;
+            padding: 15px;
+          }
+          .btn-gradient {
+            padding: 8px 18px;
+            font-size: 14px;
+          }
+        }
+        .info-block,
+        .content-block {
+          background: #fdfcfc;
+          color: #080808;
+          padding: 20px;
+          border-radius: 12px;
+          margin-bottom: 20px;
+          transition: transform 0.3s ease;
+        }
+        .info-block:hover,
+        .content-block:hover {
+          transform: translateY(-8px);
+        }
+  /* E-commerce Ended */
+
+
