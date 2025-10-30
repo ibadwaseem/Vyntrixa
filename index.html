@@ -24,9 +24,13 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     <link rel="icon" type="image/x-icon" href="/img/title.png">
+
+
 
 </head>
 <body >
@@ -90,13 +94,15 @@
 
       <!-- Toggler & Icons (Mobile) -->
       <div class="d-flex align-items-center ms-auto d-md-none">
-        <button class="navbar-toggler me-2"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+       <button class="navbar-toggler me-2" type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#navbarNavAltMarkup"
+  aria-controls="navbarNavAltMarkup"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button>
 
         <div class="navbar-icons">
           <i class="fa-solid fa-phone-volume"></i>
@@ -106,7 +112,7 @@
 
       <!-- Navbar Links -->
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto"> <!-- ms-auto moves to right -->
+        <div class="navbar-nav ms-auto"> 
           <a class="nav-link" data-aos="fade-down" data-aos-duration="1500" href="#">About Us</a>
           <a class="nav-link" data-aos="fade-down" data-aos-duration="2000" href="#">Services</a>
           <a class="nav-link" data-aos="fade-down" data-aos-duration="2500" href="#">Portfolio</a>
@@ -175,6 +181,19 @@
 .navbar-icons i:hover {
   color: #fff;
 }
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* Hide icons on mobile */
+@media (max-width: 768px) {
+  .navbar-icons {
+    display: none !important;
+  }
+}
+
 </style>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -394,6 +413,20 @@
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  .py-05 {
+    margin-top: 60px;
+    text-align: center;
+  }
+  .py-05 img {
+    margin-top: 20px;
+    max-width: 90%;
+  }
+
+  .py-05 .d-flex {
+    justify-content: center;
+  }
+}
 
 </style>
   <!-- Particle Background Script -->
@@ -510,6 +543,95 @@
   animateText();
 
 </script>
+
+
+
+                       <!-- Why Outsource IT Projects -->
+    <section class="why-vyntrixa" >
+      <div class="container">
+        <div class="row align-items-center mt-3">
+          <div class="col-md-6">
+            <h2 class="why-title">Why Vyntrixa <br />Outsource IT Projects?</h2>
+          </div>
+
+          <div class="col-md-6">
+            <ul class="list justify-content:end">
+              <li >
+                <i class="fa-solid fa-check text-sucess me-2 "></i> We Provide Effortless
+                Outsourcing Experience.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> We Strive To Deliver Optimum
+                Service Quality.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> We Ensure Best Value for Money
+                for long term business.
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> One-Stop solution for all your
+                outsourcing needs.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+      <style>
+        
+.why-vyntrixa {
+  padding: 40px 0;
+  background: linear-gradient(135deg, #2e3090, #1469b1, #fff);
+  color: #fff;
+}
+
+.why-title {
+  font-size: 2.5rem;
+  font-family: "AvertalB", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.list {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.list li {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-left: 10%;
+  align-items: center;
+  color: #fff;
+}
+
+.list i {
+  color: #00ff7f;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .why-vyntrixa {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+
+  .why-vyntrixa .d-flex {
+    justify-content: center;
+  }
+}
+
+      </style>
+
+
+
+
 
 
 </body>
