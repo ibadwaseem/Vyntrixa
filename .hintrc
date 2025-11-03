@@ -7,7 +7,8 @@
       "default",
       {
         "ignore": [
-          "user-select"
+          "user-select",
+          "backdrop-filter"
         ]
       }
     ],
@@ -15,6 +16,13 @@
       "default",
       {
         "button-name": "off"
+      }
+    ],
+    "meta-viewport": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
       }
     ]
   }

@@ -152,82 +152,581 @@
             });
         });
     </script>
-</body>
-</html>
-<!-- Hero Section -->
-  <!-- <section class="py-4 position-relative overflow-hidden" id="hero">
-    <canvas id="heroCanvas"></canvas>
-    <div class="container position-relative" style="z-index:2;">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-       <h1 data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
-            data-aos-duration="1500" class="fw-bold" style="font-size: 50px; line-height: 3rem; color: #2e3090; font-family:AvertalB , sans-serif" , >
-            WHERE IDEAS <br />
-            TURN INTO IMPACT 
-          </h1>
 
-          <p class="mt-2" style="color: #494848; font-size: 1.2rem" data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-duration="2000">
-            One of the best customer service outsourcing <br />
-            companies across the World.
-          </p>
-          <p class="mt-3" style="color: #2e3090; font-size: 1.3rem" data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-duration="2500">
-            At Vyntrixa, we provide end-to-end outsourcing solutions <br>
-            that empower businesses to scale faster, reduce costs, <br>
-            and stay focused on what truly matters — innovation. <br>
-             Our team ensures round-the-clock project execution <br> 
-            with unmatched quality and precision.
-        
-          </p>
- 
-           <button class="btn btn mt-2" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
-            data-aos-offset="0" data-aos-duration="2500">
-            Get a Quote
-          </button> 
+    <!--
+  vyntrixa-index-sections.html
+  Insert the sections below into your existing index page where appropriate.
+  Each section is wrapped in START / END comments.
+  Styles are included in a single <style> block — you can move them to style.css.
+  Dependencies: Bootstrap 5 is used for grid & carousel (already in your page).
+-->
 
-          <div class="d-flex align-items-center gap-5 mt-4 justify-content-center justify-content-md-start"
-            data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
-            data-aos-duration="1500">
-            <img src="https://outsourceitprojects.com/assets/home/certifications.png" alt="ISO" class="img-fluid"
-              style="height: 60px" />
-            <img src="https://outsourceitprojects.com/assets/home/icon/google.png" alt="Google Partner"
-              class="img-fluid" style="height: 40px" />
-            <img src="https://outsourceitprojects.com/assets/home/icon/bing.png" alt="Bing" class="img-fluid"
-              style="height: 40px" />
-          </div>
-          
-        </div>
-        <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
-          data-aos-delay="300" data-aos-offset="0" data-aos-duration="2500">
-         <div class="tech-scene">
-    <div class="monitor">
-      <div class="screen">
-  <div class="bouncing-text" >VYNTRIXA</div>
-  <div class="code-lines"></div>
-  <div class="scan-line"></div>
-</div>
+<!-- =========================
+     ADD THIS ENTIRE BLOCK WHERE YOU WANT THE NEW SECTIONS
+     ========================= -->
 
-      <div class="stand"></div>
+<!-- START: SERVICE CARDS -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-sub">End-to-end outsourcing solutions for startups & enterprises</p>
     </div>
-    <div class="keyboard"></div>
-    <div class="mouse"></div>
-  </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">💻</div>
+            <h5 class="card-title">IT Development Outsourcing</h5>
+            <p class="card-text">Dedicated teams for web & mobile apps (MERN, Flutter, Node, Python). Scalable architecture & CI/CD.</p>
+            <a href="/services/it-development" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>AOS.init({ duration: 1000, once: true });</script>
+
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">🛒</div>
+            <h5 class="card-title">E-commerce Automation</h5>
+            <p class="card-text">Amazon FBA, Shopify optimization, marketplace management & PPC automation to scale sales.</p>
+            <a href="/services/ecommerce" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">📞</div>
+            <h5 class="card-title">Customer Support Outsourcing</h5>
+            <p class="card-text">24/7 multilingual support, helpdesk setup, live chat & CX consulting with SLA-driven processes.</p>
+            <a href="/services/customer-support" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">🤖</div>
+            <h5 class="card-title">AI & Automation</h5>
+            <p class="card-text">AI chatbots, automation of repetitive tasks, RPA & predictive analytics for smarter operations.</p>
+            <a href="/services/ai-automation" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">☁️</div>
+            <h5 class="card-title">Cloud & DevOps</h5>
+            <p class="card-text">Cloud migration, infra as code, monitoring & performance optimization (AWS/Azure/GCP).</p>
+            <a href="/services/cloud-devops" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card service-card h-100">
+          <div class="card-body">
+            <div class="service-icon">👥</div>
+            <h5 class="card-title">Dedicated Remote Teams</h5>
+            <p class="card-text">Hire vetted developers, QA and PMs on monthly contracts — ramp up quickly, scale down easily.</p>
+            <a href="/services/dedicated-teams" class="btn btn-sm btn-outline-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: SERVICE CARDS -->
+
+
+<!-- START: INDUSTRIES GRID -->
+<section id="industries" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Industries We Serve</h2>
+      <p class="section-sub">Tailored outsourcing solutions for industry-specific needs</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>E-commerce</h5>
+          <p class="mb-0">Order management, product listings, PPC & customer support for marketplaces.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>SaaS & Tech</h5>
+          <p class="mb-0">Onboarding support, technical troubleshooting & dedicated dev teams for fast releases.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>FinTech</h5>
+          <p class="mb-0">KYC, compliance support, transaction monitoring & secure operations.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>Healthcare</h5>
+          <p class="mb-0">Patient support, appointment booking & HIPAA-aware processes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>Travel & Hospitality</h5>
+          <p class="mb-0">Booking support, multilingual agents & 24/7 operations.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="industry-card p-3 h-100">
+          <h5>Real Estate</h5>
+          <p class="mb-0">Lead handling, CRM management & virtual assistant services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: INDUSTRIES GRID -->
+
+
+<!-- START: CASE STUDIES -->
+<section id="case-studies" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Case Studies</h2>
+      <p class="section-sub">Real results our clients love</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="case-card p-4 h-100">
+          <h5>eCom Brand — Sales Automation</h5>
+          <p class="mb-2">We automated inventory & order flows and improved monthly revenue by <strong>+38%</strong>.</p>
+          <p class="small text-muted mb-2">Tools: Shopify, Zapier, AWS</p>
+          <a class="text-primary" href="/case-studies/ecom-automation">Read case study →</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="case-card p-4 h-100">
+          <h5>SaaS Startup — Dedicated Team</h5>
+          <p class="mb-2">Delivered MVP in 8 weeks using an offshore dev team; reduced dev cost <strong>by 45%</strong>.</p>
+          <p class="small text-muted mb-2">Tools: React, Node.js, Postgres</p>
+          <a class="text-primary" href="/case-studies/saas-mvp">Read case study →</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="case-card p-4 h-100">
+          <h5>Global Support — CX Migration</h5>
+          <p class="mb-2">Migrated support to multilingual 24/7 model, CSAT rose to <strong>97%</strong>.</p>
+          <p class="small text-muted mb-2">Tools: Zendesk, Freshdesk</p>
+          <a class="text-primary" href="/case-studies/cx-migration">Read case study →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: CASE STUDIES -->
+
+
+<!-- START: TESTIMONIALS -->
+<section id="testimonials" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">What Clients Say</h2>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+            <img src="https://via.placeholder.com/80" class="rounded-circle" alt="client" />
+            <div>
+              <p class="mb-1">"Vyntrixa delivered beyond expectations — fast ramp, great quality."</p>
+              <small class="text-muted">— Sarah J., Head of Ops, eCom Brand</small>
+            </div>
+          </div>
         </div>
 
+        <div class="carousel-item">
+          <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+            <img src="https://via.placeholder.com/80" class="rounded-circle" alt="client" />
+            <div>
+              <p class="mb-1">"Their dedicated team helped us ship a stable MVP in 2 months."</p>
+              <small class="text-muted">— Tom L., Founder, SaaS Startup</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+            <img src="https://via.placeholder.com/80" class="rounded-circle" alt="client" />
+            <div>
+              <p class="mb-1">"Reliable 24/7 support and great reporting — recommended."</p>
+              <small class="text-muted">— Lena P., Head of CX, FinTech</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- END: TESTIMONIALS -->
+
+
+<!-- START: WORLD MAP / GLOBAL PRESENCE -->
+<section id="global" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">We Work Worldwide</h2>
+      <p class="section-sub">Delivery centers & clients across the globe</p>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <!-- Simple SVG world map with highlighted regions (copyable) -->
+        <div class="world-map">
+          <!-- Minimal illustrative map - replace with interactive map later -->
+          <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet" class="img-fluid">
+            <rect width="1200" height="400" fill="#f8f9fa"></rect>
+            <g fill="#2e3090" opacity="0.08">
+              <ellipse cx="200" cy="200" rx="120" ry="60"></ellipse>
+              <ellipse cx="430" cy="170" rx="80" ry="45"></ellipse>
+              <ellipse cx="760" cy="160" rx="140" ry="80"></ellipse>
+              <ellipse cx="980" cy="210" rx="100" ry="60"></ellipse>
+            </g>
+            <!-- Markers -->
+            <g fill="#2e3090">
+              <circle cx="200" cy="190" r="6"></circle>
+              <circle cx="430" cy="160" r="6"></circle>
+              <circle cx="760" cy="150" r="6"></circle>
+              <circle cx="980" cy="200" r="6"></circle>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <ul class="list-unstyled">
+          <li>🇺🇸 USA — Enterprise & Marketplace clients</li>
+          <li>🇬🇧 UK & EU — SaaS & FinTech support</li>
+          <li>🇦🇪 UAE — GCC regional operations</li>
+          <li>🇵🇰 Pakistan — Development & Support hub</li>
+        </ul>
+      <button class="btn magnetic-btn">Get a Quote</button>
+</div>
+<script>
+  const magnets = document.querySelectorAll(".magnetic-btn");
+magnets.forEach(btn => {
+  btn.addEventListener("mousemove", function(e){
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    btn.style.transform = `translate(${x*0.2}px,${y*0.2}px)`;
+  });
+  btn.addEventListener("mouseleave", function(){
+    btn.style.transform = "";
+  });
+});
+
+gsap.from("h1", {
+  opacity:0,
+  y:60,
+  duration:1.2,
+  ease:"power4.out"
+});
+gsap.from("p", {
+  opacity:0,
+  y:40,
+  delay:0.4,
+  duration:1.2,
+  stagger:0.2,
+  ease:"power4.out"
+});
+
+gsap.to(".monitor", {
+  y:-10,
+  repeat:-1,
+  yoyo:true,
+  duration:2,
+  ease:"power1.inOut"
+});
+
+document.addEventListener("mousemove", (e)=>{
+  const circle = document.createElement("div");
+  circle.className="cursor-trail";
+  circle.style.left = e.pageX+"px";
+  circle.style.top = e.pageY+"px";
+  document.body.appendChild(circle);
+  setTimeout(()=>circle.remove(),400);
+});
+
+
+</script>
+<style>.ecom-card{
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 40px rgba(0,123,255,0.15);
+  transition:0.4s;
+}
+.ecom-card:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:0 0 55px rgba(0,123,255,0.35);
+}
+.cursor-trail{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#1469b1;
+  opacity:0.7;
+  animation: fade .4s linear forwards;
+}
+@keyframes fade{
+  to{transform:scale(4);opacity:0;}
+}
+
+
+</style>
+</div>
+  </div>
+</section>
+<!-- END: WORLD MAP / GLOBAL PRESENCE -->
+
+
+<!-- START: TECH STACK & PARTNERS -->
+<section id="tech" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Tools & Technologies</h2>
+      <p class="section-sub">We work with modern tools to deliver fast, secure solutions</p>
+    </div>
+
+    <div class="d-flex flex-wrap gap-3 justify-content-center align-items-center tech-logos">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" title="AWS"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/zendesk/zendesk-original.svg" alt="Zendesk" title="Zendesk"/>
+    </div>
+  </div>
+</section>
+<!-- END: TECH STACK & PARTNERS -->
+
+
+<!-- START: PRICING BOXES -->
+<section id="pricing" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Pricing Plans</h2>
+      <p class="section-sub">Flexible monthly plans for teams and enterprises</p>
+    </div>
+
+    <div class="row g-3 justify-content-center">
+      <div class="col-md-4">
+        <div class="card pricing-card text-center p-4 h-100">
+          <h5>Starter</h5>
+          <div class="price">$899<span class="period">/mo</span></div>
+          <ul class="list-unstyled mt-3 mb-3">
+            <li>2 Developers</li>
+            <li>Basic Support</li>
+            <li>Monthly Reporting</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline-primary">Get Started</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card pricing-card featured text-center p-4 h-100">
+          <h5>Pro</h5>
+          <div class="price">$2,499<span class="period">/mo</span></div>
+          <ul class="list-unstyled mt-3 mb-3">
+            <li>5 Developers</li>
+            <li>Priority Support</li>
+            <li>Weekly Reporting + SLA</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Request Quote</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card pricing-card text-center p-4 h-100">
+          <h5>Enterprise</h5>
+          <div class="price">Custom</div>
+          <ul class="list-unstyled mt-3 mb-3">
+            <li>Dedicated Team</li>
+            <li>Premium SLAs</li>
+            <li>White-glove Onboarding</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline-primary">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: PRICING BOXES -->
+
+
+<!-- START: CTA + CONTACT FOOTER -->
+<section id="cta" class="py-5 bg-primary text-white text-center">
+  <div class="container">
+    <h3>Ready to scale with a reliable outsourcing partner?</h3>
+    <p class="mb-3">Book a free consultation and get a tailored proposal within 48 hours.</p>
+    <a href="/contact" class="btn btn-light">Book a Free Consultation</a>
+  </div>
+</section>
+
+<footer class="pt-4 pb-4 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="/img/logo.png" alt="Vyntrixa" style="height:48px;" />
+        <p class="mt-2 small">Global IT outsourcing & CX solutions. © <span id="year"></span> Vyntrixa</p>
+      </div>
+      <div class="col-md-4">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="/services" class="text-white">Services</a></li>
+          <li><a href="/case-studies" class="text-white">Case Studies</a></li>
+          <li><a href="/blog" class="text-white">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>Contact</h6>
+        <p class="small mb-0">Email: info@yourdomain.com</p>
+        <p class="small">Phone: +92-XXXXXXXXX</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year')?.appendChild(document.createTextNode(new Date().getFullYear()));</script>
+
+
+<style>
+  .section-title{font-weight:700;color:#2e3090}
+  .section-sub{color:#6c757d}
+  .service-card{border:0;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+  .service-icon{font-size:28px;margin-bottom:10px}
+  .industry-card{background:white;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+  .case-card{background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(15,23,42,0.04)}
+  .pricing-card{border-radius:12px;box-shadow:0 10px 30px rgba(30,40,90,0.06)}
+  .pricing-card.featured{transform:translateY(-8px);border:1px solid rgba(46,48,144,0.06)}
+  .price{font-size:28px;font-weight:700;color:#2e3090}
+  .period{font-size:14px;color:#6c757d;margin-left:6px}
+  .tech-logos img{height:36px;opacity:0.95}
+  .world-map{border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(15,23,42,0.04);padding:12px}
+  @media (max-width:767px){ .service-icon{font-size:22px} }
+</style>
+
+<!-- END OF BLOCK -->
+<!-- Hero Section -->
+<section class="py-4 position-relative overflow-hidden" id="hero">
+  <canvas id="heroCanvas"></canvas>
+    <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      
+         <h2 class="fw-bold display-6" style="justify-content: center; text-align:center;">
+Industries We Serve
+            </h2>
+    <div class="crousel">
+      <div class="group">
+        <div class="cards">1</div>
+        <div class="cards">2</div>
+        <div class="cards">3</div>
+        <div class="cards">4</div>
+        <div class="cards">5</div>
+        <div class="cards">6</div>
+        <div class="cards">7</div>
+        <div class="cards">8</div>
+        <div class="cards">9</div>
+        <div class="cards">10</div>
+      </div>
+
+      <div aria-hidden class="group">
+        <div class="cards">1</div>
+        <div class="cards">2</div>
+        <div class="cards">3</div>
+        <div class="cards">4</div>
+        <div class="cards">5</div>
+        <div class="cards">6</div>
+        <div class="cards">7</div>
+        <div class="cards">8</div>
+        <div class="cards">9</div>
+        <div class="cards">10</div>
+      </div>
+    </div>
+   </div>
+      <style>
+        .crousel{
+          margin: 100px auto ;
+          width: 90%;
+          border:5px solid #fff;
+          overflow-x: auto;
+          display: flex;
+          gap: 1em;
+          border-radius: 8%;
+        }
+
+        .crousel::-webkit-scrollbar{
+          display: none;
+        }
+
+        .cards{
+          height: 5em;
+          padding: 1em;
+          flex: 0 0 5em;
+          background: #1469b1;
+          font-size: 3rem;
+          border-radius: .2em;
+          text-align: center;
+            align-items: center;
+        }
+
+        .group{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+          animation: spin 20s linear infinite;
+
+        }
+
+        @keyframes spin {
+          from {translate: 0%;}
+          to {translate: -100%;}
+        }
+
+        
+      </style>
+    
         
         <style>
-   #hero {
+          #hero {
      position: relative;
      background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
      overflow: hidden;
    }
-  
+   
    #heroCanvas {
      position: absolute;
      top: 0;
@@ -235,31 +734,8 @@
      width: 100%;
      height: 100%;
      z-index: 1;
-   }
-    .tech-scene {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 450px;
-    position: relative;
-  }
-  
-  /* === Monitor === */
-  .monitor {
-    width: 320px;
-    height: 180px;
-    border: 2px solid #f8fbff;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    animation: float 3.5s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+    }
+    
   
   /* === Screen === */
   .screen {
@@ -369,7 +845,7 @@
       margin-top: 20px;
       max-width: 90%;
     }
-  
+    
     .py-05 .d-flex {
       justify-content: center;
     }
@@ -379,8 +855,8 @@
   
       </section>
 
-  Particle Background Script -->
-<!-- <script>
+  
+ <script>
   const canvas = document.getElementById('heroCanvas');
   const ctx = canvas.getContext('2d');
   let particles = [];
@@ -450,12 +926,12 @@
 
   initParticles();
   animate();
-</script> -->
+</script> 
 
-<!-- <script>
+ <script>
   const text = document.querySelector('.bouncing-text');
   const screen = document.querySelector('.screen');
-
+  
   let x = 50, y = 50; // Starting position (in %)
   let dx = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random horizontal speed
   let dy = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random vertical speed
@@ -492,10 +968,10 @@
 
   animateText();
 
-</script> -->
+</script> 
 
                        <!-- Why Outsource IT Projects -->
-    <!-- <section class="why-vyntrixa" >
+     <section class="why-vyntrixa" >
       <div class="container">
         <div class="row align-items-center mt-3">
           <div class="col-md-6">
@@ -568,19 +1044,19 @@
     text-align: center;
   }
   
-
+  
   .why-vyntrixa .d-flex {
     justify-content: center;
   }
 }
 
       </style>
-    </section> -->
+    </section> 
       <!-- Ecommerce Section -->
-<!--- <section class="ecommerce-section py-4" data-aos="fade-up" data-aos-duration="1500">
-  <div class="container">
-    <div class="row align-items-center">
-
+      <section class="ecommerce-section py-4" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+          <div class="row align-items-center">
+            
       <div class="col-md-5 mb-4 mb-md-0">
         <h2 class="fw-bold display-6">
           Ecommerce <br />
@@ -615,7 +1091,7 @@
               <a href="#" class="btn btn-learn">→ Learn More</a>
             </div>
           </div>
-
+          
           <div class="col-md-4 col-6">
             <div class="ecom-card" style="background-image: url('https://images.unsplash.com/photo-1587620962725-abab7fe55159?fit=crop&w=600&q=80');">
               <div class="ecom-overlay"></div>
@@ -640,7 +1116,7 @@
 .ecom-card {
   height: 280px;
   background-size: cover;
-
+  
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -740,6 +1216,341 @@
   transform: translateY(-8px);
 }
   </style>
-</section> -->
+</section>
 
 
+<section class="py-4 position-relative overflow-hidden" id="industries">
+  <canvas id="industriesCanvas"></canvas>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <h2 class="fw-bold display-6 text-center mb-4">Industries We Serve</h2>
+
+      <div class="crousel">
+        <div class="group">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+
+        <div aria-hidden class="group">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <style>
+  #industries {
+  position: relative;
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+  overflow: hidden;
+}
+
+#industriesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+ </style>
+
+ <script>
+const industriesCanvas = document.getElementById("industriesCanvas");
+const ictx = industriesCanvas.getContext("2d");
+
+let iparticles = [];
+let iw, ih;
+
+function indResizeCanvas() {
+  iw = industriesCanvas.width = window.innerWidth;
+  ih = industriesCanvas.height = document.getElementById("industries").offsetHeight;
+}
+window.addEventListener("resize", indResizeCanvas);
+indResizeCanvas();
+
+class IndParticle {
+  constructor() {
+    this.x = Math.random() * iw;
+    this.y = Math.random() * ih;
+    this.vx = (Math.random() - 0.2) * 0.2;
+    this.vy = (Math.random() - 0.2) * 0.2;
+    this.size = Math.random() * 2 + 1;
+  }
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > iw) this.vx *= -1;
+    if (this.y < 0 || this.y > ih) this.vy *= -1;
+  }
+  draw() {
+    ictx.beginPath();
+    ictx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ictx.fillStyle = "rgba(20,105,177,0.5)";
+    ictx.fill();
+  }
+}
+
+function indConnect(p1, p2) {
+  const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+  if (dist < 120) {
+    ictx.beginPath();
+    ictx.strokeStyle = `rgba(20,105,177,${(1 - dist / 120) * 0.15})`;
+    ictx.lineWidth = 0.8;
+    ictx.moveTo(p1.x, p1.y);
+    ictx.lineTo(p2.x, p2.y);
+    ictx.stroke();
+  }
+}
+
+function indInitParticles() {
+  iparticles = [];
+  for (let i = 0; i < 80; i++) {
+    iparticles.push(new IndParticle());
+  }
+}
+
+function indAnimate() {
+  ictx.clearRect(0, 0, iw, ih);
+  for (let i = 0; i < iparticles.length; i++) {
+    iparticles[i].move();
+    iparticles[i].draw();
+    for (let j = i + 1; j < iparticles.length; j++) {
+      indConnect(iparticles[i], iparticles[j]);
+    }
+  }
+  requestAnimationFrame(indAnimate);
+}
+
+indInitParticles();
+indAnimate();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+  </html>
+
+  <!-- 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<section class="stats-3d">
+  <div class="swiper stats3dSwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide card3d">
+        <h2>150+</h2>
+        <p>Clients Served</p>
+        <i class="fa-solid fa-users"></i>
+      </div>
+
+      <div class="swiper-slide card3d">
+        <h2>200+</h2>
+        <p>Projects Delivered</p>
+        <i class="fa-solid fa-diagram-project"></i>
+      </div>
+
+      <div class="swiper-slide card3d">
+        <h2>80%</h2>
+        <p>United States</p>
+        <img src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/13effd80-09e1-469d-708d-e39f1e74fc00/8">
+      </div>
+
+      <div class="swiper-slide card3d">
+        <h2>10%</h2>
+        <p>United Kingdom</p>
+        <img src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/3f5e697a-820d-4143-3e2a-75d84a65b500/8">
+      </div>
+
+      <div class="swiper-slide card3d">
+        <h2>5%</h2>
+        <p>UAE</p>
+        <img src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/0cf85563-6509-4243-20f0-a224cd119b00/8">
+      </div>
+
+      <div class="swiper-slide card3d">
+        <h2>5%</h2>
+        <p>Other</p>
+        <img src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/725362bc-3473-4efa-7360-7cd77c1c3e00/8">
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .stats-3d {
+  padding: 100px 0;
+}
+
+.stats3dSwiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.card3d {
+  background: linear-gradient(145deg,#2e3090,#1469b1);
+  border-radius: 18px;
+  color: #fff;
+  text-align: center;
+  padding: 40px 15px;
+  width: 240px !important;
+  transition: .45s ease;
+  transform-origin: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.card3d img,
+.card3d i {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  opacity: .18;
+}
+
+.card3d h2 {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.card3d p {
+  opacity: .85;
+  margin-bottom: 20px;
+}
+
+/* 3D CENTER EFFECT */
+.swiper-slide {
+  transform: scale(0.75);
+  opacity: .45;
+  filter: blur(1px);
+}
+
+.swiper-slide-active {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+  filter: blur(0);
+}
+
+.swiper-slide-prev {
+  transform: translateX(-60px) scale(.85) rotateY(12deg);
+}
+
+.swiper-slide-next {
+  transform: translateX(60px) scale(.85) rotateY(-12deg);
+}
+
+@media(max-width:768px){
+  .swiper-slide-prev { transform: translateX(-30px) scale(.85); }
+  .swiper-slide-next { transform: translateX(30px) scale(.85); }
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+var swiper = new Swiper(".stats3dSwiper", {
+  effect: "slide",
+  centeredSlides: true,
+  slidesPerView: 3,
+  loop: true,
+  autoplay: { delay: 2500 },
+  speed: 800,
+
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 1.3 },
+    992: { slidesPerView: 3 }
+  }
+});
+</script> -->
+
+
+<!-- 
+
+<h1>Card Flip with Text</h1>
+<h3>Hover over the image below:</h3>
+
+<style>
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+</style>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect & Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div> -->

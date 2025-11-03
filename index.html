@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vyntrixa Outsource IT Projects</title>
-    
+      <title>Vyntrixa: World-Class Customer Service Outsourcing & Global CX Solutions</title>    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -297,7 +296,262 @@
           </div>
         </div>
       </div>
+    
 </section>
+
+<section class="py-5 position-relative overflow-hidden" id="industries">
+  <canvas id="industriesCanvas"></canvas>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <h2 class="fw-bold display-6 text-center mb-4 mt-5">Industries We Serve</h2>
+ <div class="crousel">
+      <div class="group">
+        <div class="cards">
+          <p>Real Estate
+</p>
+        </div>
+        <div class="cards">
+                <p>E-commerce
+</p>
+        </div>
+        <div class="cards">
+                <p>Digital Agency
+</p>
+        </div>
+        <div class="cards">
+                <p>Professional Services 
+</p>
+        </div>
+        <div class="cards">
+                <p>Vehicle Rental
+</p>
+        </div>
+        <div class="cards">
+                <p>Medical
+</p>
+        </div>
+        <div class="cards">
+                <p>Cleaning
+</p>
+        </div>
+        <div class="cards">
+                <p>Restaurants
+</p>
+        </div>
+        <div class="cards">
+                <p>law-Firms
+</p>
+        </div>
+        <div class="cards">
+                <p>Financial
+</p>
+        </div>
+      </div>
+
+
+<div aria-hidden class="group">
+        <div class="cards">
+          <p>Real Estate
+</p>
+        </div>
+        <div class="cards">
+                <p>E-commerce
+</p>
+        </div>
+        <div class="cards">
+                <p>Digital Agency
+</p>
+        </div>
+        <div class="cards">
+                <p>Professional Services 
+</p>
+        </div>
+        <div class="cards">
+                <p>Vehicle Rental
+</p>
+        </div>
+        <div class="cards">
+                <p>Medical
+</p>
+        </div>
+        <div class="cards">
+                <p>Cleaning
+</p>
+        </div>
+        <div class="cards">
+                <p>Restaurants
+</p>
+        </div>
+        <div class="cards">
+                <p>law-Firms
+</p>
+        </div>
+        <div class="cards">
+                <p>Financial
+</p>
+        </div>
+    </div>
+   </div>
+      <style>
+
+        #industries {
+  position: relative;
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+  overflow: hidden;
+  
+}
+
+      #industriesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+        .crousel{
+          margin: 100px auto ;
+          width: 100%;
+          border: 5px solid #fff;
+          overflow-x: auto;
+          display: flex;
+          gap: 1em;
+          border-radius: 10%;
+        }
+
+        .crousel::-webkit-scrollbar{
+          display: none;
+        }
+
+        .cards{
+          height: 5em;
+          padding: 1em;
+          flex: 0 0 5em;
+          background: #1469b1;
+          font-size: 3rem;
+          border-radius: .2em;
+          text-align: center;
+          align-items: center;
+        }
+
+        .group{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+          animation: spin 20s linear infinite;
+
+        }
+
+        @keyframes spin {
+          from {translate: 0%;}
+          to {translate: -100%;}
+        }
+    
+        
+        
+          #hero {
+     position: relative;
+     background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+     overflow: hidden;
+   }
+   
+   #heroCanvas {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 1;
+    }
+
+    .group p{
+      font-family: "AvertalB", sans-serif ;
+      color: #fff;
+      font-size: 1.4rem;
+      margin-top: 70%;
+    }
+    
+  
+  
+  
+  </style>
+ <script>
+const industriesCanvas = document.getElementById("industriesCanvas");
+const ictx = industriesCanvas.getContext("2d");
+
+let iparticles = [];
+let iw, ih;
+
+function indResizeCanvas() {
+  iw = industriesCanvas.width = window.innerWidth;
+  ih = industriesCanvas.height = document.getElementById("industries").offsetHeight;
+}
+window.addEventListener("resize", indResizeCanvas);
+indResizeCanvas();
+
+class IndParticle {
+  constructor() {
+    this.x = Math.random() * iw;
+    this.y = Math.random() * ih;
+    this.vx = (Math.random() - 0.2) * 0.2;
+    this.vy = (Math.random() - 0.2) * 0.2;
+    this.size = Math.random() * 2 + 1;
+  }
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > iw) this.vx *= -1;
+    if (this.y < 0 || this.y > ih) this.vy *= -1;
+  }
+  draw() {
+    ictx.beginPath();
+    ictx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ictx.fillStyle = "rgba(20,105,177,0.5)";
+    ictx.fill();
+  }
+}
+
+function indConnect(p1, p2) {
+  const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+  if (dist < 120) {
+    ictx.beginPath();
+    ictx.strokeStyle = `rgba(20,105,177,${(1 - dist / 120) * 0.15})`;
+    ictx.lineWidth = 0.8;
+    ictx.moveTo(p1.x, p1.y);
+    ictx.lineTo(p2.x, p2.y);
+    ictx.stroke();
+  }
+}
+
+function indInitParticles() {
+  iparticles = [];
+  for (let i = 0; i < 80; i++) {
+    iparticles.push(new IndParticle());
+  }
+}
+
+function indAnimate() {
+  ictx.clearRect(0, 0, iw, ih);
+  for (let i = 0; i < iparticles.length; i++) {
+    iparticles[i].move();
+    iparticles[i].draw();
+    for (let j = i + 1; j < iparticles.length; j++) {
+      indConnect(iparticles[i], iparticles[j]);
+    }
+  }
+  requestAnimationFrame(indAnimate);
+}
+
+indInitParticles();
+indAnimate();
+</script>
+
+
+  
+  
+      </section>
+
 
     <script>
       window.addEventListener("load", () => {
@@ -445,11 +699,14 @@
 
       // Initial position set and then animation starts
       text.style.position = "absolute";
-      text.style.top = "50%";
-      text.style.left = "50%";
-      text.style.transform = "translate(-50%, -50%)"; // Center initially
+      text.style.top = "10%";
+      text.style.left = "0%";
+      text.style.transform = "translate(-20%, -20%)"; // Center initially
 
       animateText();
+
+
+      
     </script>
   </body>
 </html>
