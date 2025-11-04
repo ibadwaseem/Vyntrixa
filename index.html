@@ -281,178 +281,172 @@
           </div>
 
         </div>
+<style>
+  #industries {
+  position: relative;
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+  overflow: hidden;
+}
 
-        <style>
-          #industries {
-            position: relative;
-            background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
-            overflow: hidden;
-          }
+#industriesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-          #industriesCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-          }
+/* Orbit card styling */
+.orbit-card {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  background: #1469b1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform .3s, box-shadow .3s;
+  text-align: center;
+  cursor: pointer;
+}
 
-          .orbit-card {
-            position: absolute;
-            width: 200px;
-            height: 120px;
-            background: #1469b1;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            font-family: "AvertalB", sans-serif;
-            transition: transform .3s ease, box-shadow .3s ease;
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
-          }
+.ind-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
 
-          .orbit-card:hover {
-            animation-play-state: paused !important;
-            /* pause only card */
-            transform: scale(1.2) translateZ(60px);
-            box-shadow: 0 15px 35px rgba(20, 105, 177, .45);
-          }
+.ind-btn {
+  background: white;
+  border: none;
+  color: #1469b1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: .6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-          /* stop animation only for hovered card */
-          .orbit-card:hover {
-            animation: none !important;
-          }
+/* Orbit container */
+.orbit-slider {
+  perspective: 1200px;
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
 
-          .ind-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 12px;
-          }
+.orbit-track {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: spinOrbit 18s linear infinite;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-          .orbit-card h4 {
-            font-size: 1rem;
-            margin: 3px 0 7px 0;
-            font-weight: 600;
-          }
+/* Card positioning around circle */
+.orbit-card:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
+.orbit-card:nth-child(2) { transform: rotateY(36deg) translateZ(350px); }
+.orbit-card:nth-child(3) { transform: rotateY(72deg) translateZ(350px); }
+.orbit-card:nth-child(4) { transform: rotateY(108deg) translateZ(350px); }
+.orbit-card:nth-child(5) { transform: rotateY(144deg) translateZ(350px); }
+.orbit-card:nth-child(6) { transform: rotateY(180deg) translateZ(350px); }
+.orbit-card:nth-child(7) { transform: rotateY(216deg) translateZ(350px); }
+.orbit-card:nth-child(8) { transform: rotateY(252deg) translateZ(350px); }
+.orbit-card:nth-child(9) { transform: rotateY(288deg) translateZ(350px); }
+.orbit-card:nth-child(10){ transform: rotateY(324deg) translateZ(350px); }
 
-          .ind-btn {
-            background: white;
-            border: none;
-            color: #1469b1;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: .5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-          }
+@keyframes spinOrbit {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(-360deg); }
+}
 
-          .ind-btn:hover {
-            background: #fff;
-            transform: scale(1.1);
-          }
+/* Hover pause */
+.orbit-slider:hover .orbit-track { animation-play-state: paused; }
+.orbit-card:hover { transform: scale(1.15) translateZ(60px); }
+/* ✅ MOBILE VIEW FIX — SHOW CARDS VERTICALLY */
+@media(max-width: 768px) {
+
+  .orbit-slider {
+    height: auto !important;
+    perspective: none !important;
+  }
+  #industriesCanvas {
+  z-index: 0 !important;
+}
 
 
-          .orbit-slider {
-            perspective: 1200px;
-            width: 100%;
-            height: 250px;
-            position: relative;
-          }
+  .orbit-track {
+    animation: none !important;
+    transform: none !important;
+    width: 100%;
+    height: auto;
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center;
+    gap: 18px;
+    padding: 20px 10px;
+    z-index: 2;
+    position: relative;
+  }
 
-          .orbit-track {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            animation: spinOrbit 18s linear infinite;
-            transform-style: preserve-3d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+  .orbit-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    height: auto !important;
+    padding: 18px;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 
-          .orbit-slider:hover .orbit-track {
-            animation-play-state: paused;
-          }
+  .orbit-card:nth-child(n) {
+    transform: none !important; 
+  }
 
-          .orbit-card {
-            position: absolute;
-            width: 200px;
-            height: 150px;
-            background: #1469b1;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 14px;
-            font-family: "AvertalB", sans-serif;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            transition: transform .3s, box-shadow .3s;
-          }
+  .orbit-card:hover {
+    transform: scale(1.03) !important;
+  }
+}
 
-          .orbit-card:hover {
-            transform: scale(1.2) translateZ(60px);
-            box-shadow: 0 12px 30px rgba(20, 105, 177, .4);
-          }
 
-          .orbit-card:nth-child(1) {
-            transform: rotateY(0deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(2) {
-            transform: rotateY(36deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(3) {
-            transform: rotateY(72deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(4) {
-            transform: rotateY(108deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(5) {
-            transform: rotateY(144deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(6) {
-            transform: rotateY(180deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(7) {
-            transform: rotateY(216deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(8) {
-            transform: rotateY(252deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(9) {
-            transform: rotateY(288deg) translateZ(350px);
-          }
-
-          .orbit-card:nth-child(10) {
-            transform: rotateY(324deg) translateZ(350px);
-          }
-
-          @keyframes spinOrbit {
-            0% {
-              transform: rotateY(0deg);
-            }
-
-            100% {
-              transform: rotateY(-360deg);
-            }
-          }
-        </style>
+</style>
       </div>
+  </section>
+
+    <!-- why-vyntrixa Started -->
+  <section class="why-vyntrixa">
+    <div class="container">
+      <div class="row align-items-center mt-3">
+        <div class="col-md-6">
+          <h2 class="why-title">Why Vyntrixa <br />Outsource IT Projects?</h2>
+        </div>
+        <div class="col-md-6">
+          <ul class="list justify-content:end">
+            <li>
+              <i class="fa-solid fa-check text-sucess me-2"></i> 98% First Contact Resolution Rate (FCR).
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i> 24 /7/365 Multilingual Support across all time zones.
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i> Average 30% Reduction in Operational Cost for new clients.
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i> ISO-Certified Processes for Data Security & Quality (E-E-A-T).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
 
