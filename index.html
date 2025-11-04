@@ -219,7 +219,7 @@
 
   </section>
   <!-- Industries We Served -->
-  <section class="py-5 position-relative overflow-hidden" id="industries">
+  <section class="py-5 position-relative overflow-hidden" id="industries" >
     <canvas id="industriesCanvas"></canvas>
     <div class="container position-relative" style="z-index:2;">
       <h2 class="fw-bold display-6 text-center mb-5 mt-4">Industries We Serve</h2>
@@ -229,57 +229,58 @@
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Real Estate</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
 
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>E-commerce</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
 
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Digital Agency</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Professional Services </h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
 
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Vehcile Rental</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Medical</h4>
-            <button class="ind-btn">Explore</button>
+          <a href="#">  <button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Cleaning</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Restaurants</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Law Firms</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
           <div class="orbit-card">
             <img src="/img/logo.png" class="ind-icon">
             <h4>Financial</h4>
-            <button class="ind-btn">Explore</button>
+            <a href="#"><button class="ind-btn">Explore</button></a>
           </div>
 
+        </div>
         </div>
 <style>
   #industries {
@@ -352,7 +353,7 @@
   align-items: center;
 }
 
-/* Card positioning around circle */
+/* Card positions */
 .orbit-card:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
 .orbit-card:nth-child(2) { transform: rotateY(36deg) translateZ(350px); }
 .orbit-card:nth-child(3) { transform: rotateY(72deg) translateZ(350px); }
@@ -369,20 +370,19 @@
   100% { transform: rotateY(-360deg); }
 }
 
-/* Hover pause */
+/* ✅ Hover pause */
 .orbit-slider:hover .orbit-track { animation-play-state: paused; }
-.orbit-card:hover { transform: scale(1.15) translateZ(60px); }
-/* ✅ MOBILE VIEW FIX — SHOW CARDS VERTICALLY */
+
+
+/* ✅ MOBILE VIEW FIX — list view */
 @media(max-width: 768px) {
 
   .orbit-slider {
     height: auto !important;
     perspective: none !important;
   }
-  #industriesCanvas {
-  z-index: 0 !important;
-}
 
+  #industriesCanvas { z-index: 0 !important; }
 
   .orbit-track {
     animation: none !important;
@@ -405,11 +405,6 @@
     height: auto !important;
     padding: 18px;
     transform: none !important;
-    opacity: 1 !important;
-  }
-
-  .orbit-card:nth-child(n) {
-    transform: none !important; 
   }
 
   .orbit-card:hover {
@@ -417,9 +412,10 @@
   }
 }
 
-
 </style>
-      </div>
+
+
+      
   </section>
 
     <!-- why-vyntrixa Started -->
