@@ -1254,7 +1254,8 @@ Industries We Serve
       </div>
     </div>
   </div>
-</section>
+
+
  <style>
   #industries {
   position: relative;
@@ -1345,12 +1346,339 @@ indAnimate();
 </script>
 
 
+</section>
+
+<!-- Global Reach Section -->
+<section class="global-reach">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="reach-title">Our Global Reach</h2>
+      <p class="reach-subtitle">Delivering excellence across the globe</p>
+    </div>
+
+    <div class="row align-items-center justify-content-center">
+      <!-- Left Side: Stats -->
+      <div class="col-md-5 mb-4">
+        <div class="reach-stat-card">
+          <div class="icon-box"><i class="fa-solid fa-user-group"></i></div>
+          <div>
+            <h6>Clients Served</h6>
+            <h2><span class="count" data-target="150">0</span>+</h2>
+          </div>
+        </div>
+
+        <div class="reach-stat-card mt-4">
+          <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+          <div>
+            <h6>Projects Delivered</h6>
+            <h2><span class="count" data-target="200">0</span>+</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Flags -->
+      <div class="col-md-7">
+        <div class="flag-grid">
+          <div class="flag-card">
+            <img src="https://flagcdn.com/w80/us.png" alt="USA">
+            <div>
+              <h3>80%</h3>
+              <p>United States of America</p>
+            </div>
+          </div>
+          <div class="flag-card">
+            <img src="https://flagcdn.com/w80/gb.png" alt="UK">
+            <div>
+              <h3>10%</h3>
+              <p>United Kingdom</p>
+            </div>
+          </div>
+          <div class="flag-card">
+            <img src="https://flagcdn.com/w80/ae.png" alt="UAE">
+            <div>
+              <h3>05%</h3>
+              <p>United Arab Emirates</p>
+            </div>
+          </div>
+          <div class="flag-card">
+            <img src="https://flagcdn.com/w80/in.png" alt="Other">
+            <div>
+              <h3>05%</h3>
+              <p>Other Countries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- CSS -->
+<style>
+/* Global Reach Section */
+.global-reach {
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+}
+.reach-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2e3090;
+  margin-bottom: 10px;
+}
+.reach-subtitle {
+  color: #1469b1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Stat Cards */
+.reach-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(20, 105, 177, 0.1);
+  transition: all 0.4s ease;
+}
+.reach-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(20, 105, 177, 0.15);
+}
+.icon-box {
+  background: linear-gradient(135deg, #1469b1, #2e3090);
+  color: white;
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reach-stat-card h6 {
+  color: #1469b1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.reach-stat-card h2 {
+  font-weight: 700;
+  color: #2e3090;
+  font-size: 2.2rem;
+}
+
+/* Flag Grid */
+.flag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.flag-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(20, 105, 177, 0.1);
+  transition: all 0.3s ease;
+}
+.flag-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(20, 105, 177, 0.15);
+}
+.flag-card img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #1469b1;
+  transition: transform 0.4s ease;
+}
+.flag-card:hover img {
+  transform: scale(1.1);
+}
+.flag-card h3 {
+  color: #2e3090;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+.flag-card p {
+  color: #1469b1;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flag-grid {
+    grid-template-columns: 1fr;
+  }
+  .reach-stat-card {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+</style>
+
+<!-- Counter Script -->
+<script>
+const counters = document.querySelectorAll('.count');
+const speed = 60;
+const startCounters = () => {
+  counters.forEach(counter => {
+    const update = () => {
+      const target = +counter.dataset.target;
+      const current = +counter.innerText;
+      const inc = target / speed;
+      if (current < target) {
+        counter.innerText = Math.ceil(current + inc);
+        setTimeout(update, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    update();
+  });
+};
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) startCounters();
+  });
+});
+observer.observe(document.querySelector('.global-reach'));
+</script>
 
 
 
 
+</section>
 
 
+<section class="py-4 position-relative overflow-hidden" id="industries">
+  <canvas id="industriesCanvas"></canvas>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <h2 class="fw-bold display-6 text-center mb-4">Industries We Serve</h2>
+
+      <div class="carousel-vertical">
+        <div class="group-vertical">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+
+        <div aria-hidden class="group-vertical">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #industries {
+      position: relative;
+      background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+      overflow: hidden;
+    }
+
+    #industriesCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* === Vertical Carousel === */
+    .carousel-vertical {
+      margin: 60px auto;
+      width: 50%;
+      height: 400px;
+      border: 5px solid #fff;
+      overflow-y: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      border-radius: 8%;
+      position: relative;
+      mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    }
+
+    .cards {
+      height: 5em;
+      width: 350px;
+      padding: 1em;
+      flex: 0 0 5em;
+      background: #1469b1;
+      font-size: 2rem;
+      border-radius: 0.4em;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .group-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2em;
+      animation: scrollVertical 20s linear infinite;
+    }
+
+    @keyframes scrollVertical {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100%); }
+    }
+
+    /* Pause on hover */
+    .carousel-vertical:hover .group-vertical {
+      animation-play-state: paused;
+    }
+
+    /* Smooth stacking on mobile */
+    @media (max-width: 768px) {
+      .carousel-vertical {
+        height: auto;
+        border: none;
+        border-radius: 0;
+        mask-image: none;
+      }
+      .group-vertical {
+        animation: none;
+      }
+    }
+  </style>
+
+</section>
 
 
 
