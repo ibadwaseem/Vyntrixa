@@ -633,6 +633,181 @@ observer.observe(document.querySelector('.global-reach'));
 </section>
 
 
+<section class="testimonial-section py-5 position-relative overflow-hidden">
+    <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center";>
+      <!-- Left side - Client Images -->
+      <div class="col-lg-6 d-none d-lg-flex flex-column align-items-center">
+        <ol class="testimonial-tabs list-unstyled">
+          <li class="client-1" style="margin-left: 150px;"  data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="">
+            <figure><img src="/img/title.png" alt="Client 1"></figure>
+          </li>
+          <li class="client-2" style="margin-right: 150px;   "  data-bs-target="#testimonialCarousel" data-bs-slide-to="1">
+            <figure><img  src="/img/title.png" alt="Client 2"></figure>
+          </li>
+          <li class="client-3" style="margin-left: 150px;" data-bs-target="#testimonialCarousel" data-bs-slide-to="2">
+            <figure><img src="/img/title.png" alt="Client 3"></figure>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Right side - Testimonials -->
+      <div class="col-lg-6">
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="text-center mb-4">
+            <h3 class="text-uppercase text-primary fw-semibold">What Our Clients Say</h3>
+            <h1 class="fw-bold display-6 text-dark">Testimonials</h1>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-quote text-center">
+                <p class="text-muted mb-4">“I have tried a lot of customer support services, but Vyntrixa’s outsourcing team truly exceeded expectations. The professionalism and response time were amazing!”</p>
+                <h4 class="fw-bold text-primary">Syed Muhammad Ibad</h4>
+                <small class="text-muted">CEO, SyedTech Solutions</small>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-quote text-center">
+                <p class="text-muted mb-4">“Working with Vyntrixa improved our client experience drastically. They deliver quality, consistency, and true dedication.”</p>
+                <h4 class="fw-bold text-primary">Billal Habeeb</h4>
+                <small class="text-muted">Head of CX, Nova Systems</small>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-quote text-center">
+                <p class="text-muted mb-4">“Exceptional results and seamless communication — our global support now runs better than ever before!”</p>
+                <h4 class="fw-bold text-primary">Michael Chen</h4>
+                <small class="text-muted">Operations Director, BlueEdge</small>
+              </div>
+            </div>
+          </div>
+
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Background + particle canvas */
+    .testimonial-section {
+      background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+.client{
+  margin-left: 100px;
+}
+    /* Left side tabs */
+    .testimonial-tabs li {
+      cursor: pointer;
+      margin: 20px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .testimonial-tabs li figure {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid transparent;
+      box-shadow: 0 0 15px rgba(20, 105, 177, 0.1);
+      transition: all 0.4s ease;
+    }
+    .testimonial-tabs li.active figure,
+    .testimonial-tabs li:hover figure {
+      border-color: #1469b1;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(20, 105, 177, 0.25);
+    }
+    .testimonial-tabs img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* Carousel text */
+    .testimonial-quote p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #1469b1;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0.4;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  </style>
+
+  
+</section>
+
+<!-- <section class="py-4 position-relative overflow-hidden" id="client">
+  <canvas id="industriesCanvas"></canvas>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <h2 class="fw-bold display-6 text-center mb-4">OUR CLIENT</h2>
+
+      <div class="crousel">
+        <div class="groupS">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+
+        <div aria-hidden class="group">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <style>
+  #client {
+  position: relative;
+  background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+  overflow: hidden;
+}
+
+#industriesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+ </style>
+
+
+</section> -->
+
+
+
 
 
   <script>

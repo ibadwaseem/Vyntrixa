@@ -8,7 +8,9 @@
       {
         "ignore": [
           "user-select",
-          "backdrop-filter"
+          "backdrop-filter",
+          "mask-image",
+          "-ms-touch-action"
         ]
       }
     ],
