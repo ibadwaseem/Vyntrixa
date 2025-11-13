@@ -284,9 +284,10 @@ body{
           padding: 40px 0;
           background: linear-gradient(135deg, #2e3090, #1469b1, #fff);
           color: #fff;
+          
         }
         .why-title {
-          font-size: 2.5rem;
+          font-size: 2.4rem;
           font-family: "AvertalB", sans-serif;
           font-weight: 700;
           color: #fff;
@@ -325,7 +326,7 @@ body{
   /* E-commerce Started */
  /* E-commerce Styles */
         .ecommerce-section {
-          background: white;
+          background: #fff;
           margin-top: 20px;
           margin-bottom: 20px;
         }
