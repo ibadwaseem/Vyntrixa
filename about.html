@@ -131,86 +131,69 @@
 
   </section>
 
+<section>
+  <div class="slider py-4 mt-3">
+    <div class="slide-track mb-3">
+      <!-- Your logos repeated twice for continuous loop -->
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
 
-
-<section class="py-4 position-relative overflow-hidden" id="hero">
-    <div class="container position-relative">
-    <div class="row align-items-center">
-    <div class="crousel">
-      <div class="group">
-        <div class="cards">1</div>
-        <div class="cards">2</div>
-        <div class="cards">3</div>
-        <div class="cards">4</div>
-        <div class="cards">5</div>
-        <div class="cards">6</div>
-        <div class="cards">7</div>
-        <div class="cards">8</div>
-        <div class="cards">9</div>
-        <div class="cards">10</div>
-      </div>
-
-      <div aria-hidden class="group">
-        <div class="cards">1</div>
-        <div class="cards">2</div>
-        <div class="cards">3</div>
-        <div class="cards">4</div>
-        <div class="cards">5</div>
-        <div class="cards">6</div>
-        <div class="cards">7</div>
-        <div class="cards">8</div>
-        <div class="cards">9</div>
-        <div class="cards">10</div>
-      </div>
+      <!-- Repeat again for smooth infinite loop -->
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
+      <div class="slide"><img src="img/logo.png"></div>
     </div>
-   </div>
-      <style>
-        .crousel{
-          margin: 100px auto ;
-          width: 90%;
-          border:5px solid #fff;
-          overflow-x: auto;
-          display: flex;
-          gap: 1em;
-          border-radius: 8%;
-        }
+  </div>
+</section>
 
-        .crousel::-webkit-scrollbar{
-          display: none;
-        }
+<style>
+/* MAIN SLIDER BOX */
+.slider {
+  width: 100%;
+  height: 70px;               /* 👈 Perfect height */
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+}
 
-        .cards{
-          height: 5em;
-          padding: 1em;
-          flex: 0 0 5em;
-          background: #1469b1;
-          font-size: 3rem;
-          border-radius: .2em;
-          text-align: center;
-            align-items: center;
-        }
+/* TRACK THAT MOVES */
+.slide-track {
+  display: flex;
+  width: calc(140px * 14);     /* width = slide width * (count × 2) */
+  animation: scroll 20s linear infinite;
+}
 
-        .group{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1em;
-          animation: spin 20s linear infinite;
+/* EACH LOGO */
+.slide {
+  width: 140px;                /* 👈 Perfect width */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        }
+.slide img {
+  width: 80%;                   /* Adjust image size inside */
+  height: auto;
+  object-fit: contain;
+}
 
-        @keyframes spin {
-          from {translate: 0%;}
-          to {translate: -100%;}
-        }
-
-        
-      </style>
-    
-        
-        
-  
-      </section>
+/* ANIMATION */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-140px * 7)); }
+}
+</style>
 
 
 
@@ -319,3 +302,82 @@
 
 </body>
 </html>
+
+  <!-- <section class="py-4 position-relative overflow-hidden" id="hero">
+      <div class="container position-relative">
+      <div class="row align-items-center">
+      <div class="crousel">
+        <div class="group">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+  
+        <div aria-hidden class="group">
+          <div class="cards">1</div>
+          <div class="cards">2</div>
+          <div class="cards">3</div>
+          <div class="cards">4</div>
+          <div class="cards">5</div>
+          <div class="cards">6</div>
+          <div class="cards">7</div>
+          <div class="cards">8</div>
+          <div class="cards">9</div>
+          <div class="cards">10</div>
+        </div>
+      </div>
+     </div>
+        <style>
+          .crousel{
+            margin: 100px auto ;
+            width: 90%;
+            border:5px solid #fff;
+            overflow-x: auto;
+            display: flex;
+            gap: 1em;
+            border-radius: 8%;
+          }
+  
+          .crousel::-webkit-scrollbar{
+            display: none;
+          }
+  
+          .cards{
+            height: 5em;
+            padding: 1em;
+            flex: 0 0 5em;
+            background: #1469b1;
+            font-size: 3rem;
+            border-radius: .2em;
+            text-align: center;
+              align-items: center;
+          }
+  
+          .group{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            animation: spin 20s linear infinite;
+  
+          }
+  
+          @keyframes spin {
+            from {translate: 0%;}
+            to {translate: -100%;}
+          }
+  
+          
+        </style>
+      
+          
+          
+    
+        </section> -->
