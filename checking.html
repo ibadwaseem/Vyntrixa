@@ -1799,8 +1799,116 @@ observer.observe(document.querySelector('.global-reach'));
   
 </section>
 
+<section class="leadership-section">
+  <div class="container">
 
-<!-- Footer  -->
+    <h1 class="leadership-title">Leadership</h1>
+    <p class="leadership-subtitle">
+      Vyntrixa was founded by a team of <strong>database builders</strong> and <strong>Postgres hackers</strong>.
+    </p>
+
+    <div class="leaders-wrapper">
+
+      <div class="leader-box">
+        <img src="" alt="">
+        <h4></h4>
+        <p>CEO</p>
+      </div>
+
+      <div class="leader-box">
+        <img src="" alt="">
+        <h4></h4>
+        <p>Co-Founder</p>
+      </div>
+
+      <div class="leader-box">
+        <img src="" alt="">
+        <h4></h4>
+        <p>Head of Web Development</p>
+      </div>
+
+      <div class="leader-box">
+        <img src="" alt="">
+        <h4></h4>
+        <p>Head of Graphic Designer</p>
+      </div>
+
+      <div class="leader-box">
+        <img src="" alt="">
+        <h4></h4>
+        <p>Head of Social Media</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+  .leadership-section {
+    background: #fff;
+    padding: 50px 0 70px;
+    color: #1d1d1d;
+}
+
+.leadership-title {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.leadership-subtitle {
+    font-size: 18px;
+    color: #2e3090;
+    margin-bottom: 50px;
+}
+
+.leaders-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.leader-box {
+    width: 13%;
+}
+
+.leader-box img {
+    width: 100%;
+    border-radius: 6px;
+    filter: grayscale(100%);
+    display: block;
+}
+
+.leader-box h4 {
+    font-size: 15px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.leader-box p {
+    font-size: 13px;
+    color: #aeb4bb;
+    margin-top: 3px;
+}
+
+@media(max-width: 992px) {
+    .leaders-wrapper {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .leader-box {
+        width: 30%;
+    }
+}
+
+@media(max-width: 576px) {
+    .leader-box {
+        width: 48%;
+    }
+}
+
+</style>
+<!-- Footer  -->    
 <footer class="footer">
 
   <!-- Widgets - Bootstrap Brain Component -->

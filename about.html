@@ -300,6 +300,778 @@
     animate();
   </script>
 
+  <script>
+    // Bouncing text script yahan theek hai
+    const text = document.querySelector(".bouncing-text");
+    const screen = document.querySelector(".screen");
+
+    let x = 50,
+      y = 50; // Starting position (in %)
+    let dx = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random horizontal speed
+    let dy = (Math.random() * 0.3 + 0.2) * (Math.random() > 0.5 ? 1 : -1); // random vertical speed
+
+    function animateText() {
+      const rect = screen.getBoundingClientRect();
+      const textRect = text.getBoundingClientRect();
+
+      x += dx;
+      y += dy;
+
+      // bounce horizontally
+      if (x <= 0 || x + textRect.width >= rect.width) {
+        dx = -dx;
+        text.style.color = getRandomColor(); // change color on bounce
+      }
+
+      // bounce vertically
+      if (y <= 0 || y + textRect.height >= rect.height) {
+        dy = -dy;
+        text.style.color = getRandomColor();
+      }
+
+      // Correction for position being relative to screen
+      text.style.left = `${x}px`;
+      text.style.top = `${y}px`;
+
+      requestAnimationFrame(animateText);
+    }
+
+    function getRandomColor() {
+      const colors = ["#fff", "#1469b1", "#2e3090", "#1d1d1d"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // Initial position set and then animation starts
+    text.style.position = "absolute";
+    text.style.top = "10%";
+    text.style.left = "0%";
+    text.style.transform = "translate(-20%, -20%)"; // Center initially
+
+    animateText();
+
+
+
+  </script>
+
+  <script>
+    const industriesCanvas = document.getElementById("industriesCanvas");
+    const ictx = industriesCanvas.getContext("2d");
+
+    let iparticles = [];
+    let iw, ih;
+
+    function indResizeCanvas() {
+      iw = industriesCanvas.width = window.innerWidth;
+      ih = industriesCanvas.height = document.getElementById("industries").offsetHeight;
+    }
+    window.addEventListener("resize", indResizeCanvas);
+    indResizeCanvas();
+
+    class IndParticle {
+      constructor() {
+        this.x = Math.random() * iw;
+        this.y = Math.random() * ih;
+        this.vx = (Math.random() - 0.2) * 0.2;
+        this.vy = (Math.random() - 0.2) * 0.2;
+        this.size = Math.random() * 2 + 1;
+      }
+      move() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > iw) this.vx *= -1;
+        if (this.y < 0 || this.y > ih) this.vy *= -1;
+      }
+      draw() {
+        ictx.beginPath();
+        ictx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ictx.fillStyle = "rgba(20,105,177,0.5)";
+        ictx.fill();
+      }
+    }
+
+    function indConnect(p1, p2) {
+      const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+      if (dist < 120) {
+        ictx.beginPath();
+        ictx.strokeStyle = `rgba(20,105,177,${(1 - dist / 120) * 0.15})`;
+        ictx.lineWidth = 0.8;
+        ictx.moveTo(p1.x, p1.y);
+        ictx.lineTo(p2.x, p2.y);
+        ictx.stroke();
+      }
+    }
+
+    function indInitParticles() {
+      iparticles = [];
+      for (let i = 0; i < 80; i++) {
+        iparticles.push(new IndParticle());
+      }
+    }
+
+    function indAnimate() {
+      ictx.clearRect(0, 0, iw, ih);
+      for (let i = 0; i < iparticles.length; i++) {
+        iparticles[i].move();
+        iparticles[i].draw();
+        for (let j = i + 1; j < iparticles.length; j++) {
+          indConnect(iparticles[i], iparticles[j]);
+        }
+      }
+      requestAnimationFrame(indAnimate);
+    }
+
+    indInitParticles();
+    indAnimate();
+  </script>
+  
+  <style>
+    /* Background + particle canvas */
+    .testimonial-section {
+      background: radial-gradient(circle at top left, #e9f2ff 0%, #f8fbff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+.client{
+  margin-left: 100px;
+}
+    /* Left side tabs */
+    .testimonial-tabs li {
+      cursor: pointer;
+      margin: 20px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .testimonial-tabs li figure {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid transparent;
+      box-shadow: 0 0 15px rgba(20, 105, 177, 0.1);
+      transition: all 0.4s ease;
+    }
+    .testimonial-tabs li.active figure,
+    .testimonial-tabs li:hover figure {
+      border-color: #1469b1;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(20, 105, 177, 0.25);
+    }
+    .testimonial-tabs img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* Carousel text */
+    .testimonial-quote p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #1469b1;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0.4;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  </style>
+
+
+  
+<!-- <section class="neon-timeline py-5">
+  <div class="container position-relative">
+
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item" style="--pos: 6%;">
+      <span class="dot"></span>
+      <div class="text-box">
+        
+        <h6>First Commits</h6>
+      </div>
+    </div>
+
+    <div class="timeline-item" style="--pos: 22%;">
+      <span class="dot"></span>
+      <div class="text-box">
+        
+        <h6>Technical Preview</h6>
+      </div>
+    </div>
+
+    <div class="timeline-item" style="--pos: 38%;">
+      <span class="dot"></span>
+      <div class="text-box">
+        
+        <h6> //// </h6>
+      </div>
+    </div>
+
+    <div class="timeline-item" style="--pos: 55%;">
+      <span class="dot"></span>
+      <div class="text-box">
+        
+        <h6>   /////  </h6>
+      </div>
+    </div>
+
+    <div class="timeline-item" style="--pos: 72%;">
+      <span class="dot"></span>
+      <div class="text-box">
+        
+        <h6> //// </h6>
+      </div>
+    </div>
+
+    <div class="timeline-item highlight" style="--pos: 92%;">
+      <span class="dot"></span>
+      <div class="halo"></div>
+      <div class="text-box">
+        
+        <h6> //// </h6>
+      </div>
+    </div>
+
+  </div>
+
+  
+<style>
+  .neon-timeline {
+  background: #fff;
+  color: #111111;
+  position: relative;
+  padding-top: 100px;
+}
+
+.timeline-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.15);
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.12);
+}
+
+.timeline-item {
+  position: absolute;
+  top: -12px;
+  left: var(--pos);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.timeline-item .dot {
+  width: 12px;
+  height: 12px;
+  background: #1469b1;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 
+    0 0 10px #2e3090,
+    0 0 20px #00eaff,
+     0 0 40px rgba(0,255,255,0.4); 
+}
+
+.timeline-item .text-box {
+  margin-top: 18px;
+}
+
+.timeline-item small {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.timeline-item h6 {
+  font-size: 16px;
+  margin-top: 3px;
+  font-weight: 600;
+  color: #2e3090;
+}
+
+/* Highlighted glow section */
+.timeline-item.highlight .dot {
+  width: 15px;
+  height: 15px;
+  box-shadow:
+    0 0 14px #00eaff,
+    0 0 28px #00eaff,
+    0 0 55px rgba(0,255,255,0.75);
+}
+
+/* Halo glow exactly behind highlight */
+.timeline-item .halo {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 280px;
+  height: 180px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    #00ffff40,
+    #00ffff0d,
+    transparent 70%
+  );
+  filter: blur(20px);
+  z-index: -1;
+}
+
+</style>
+
+</section> -->
+
+
+
+<!-- virtual-resources -->
+                                     <section class="virtual-resources-section">
+  <div class="container-fluid">
+    <div class="row g-1 align-items-center">
+      
+      <div class="col-lg-7 content-box">
+        <div class="inner-content">
+          <h1 class="section-title">
+            Virtual <br />
+            <span>Resources</span>
+          </h1>
+          <p class="section-text">
+            Our goal is to help you reach your business goals. We provide a variety 
+            of virtual resources which helps you in your business operations, our 
+            services extend beyond email virtual assistants and Chatbot’s.
+          </p>
+
+          <div class="btn-group">
+            <a href="#" class="btn-explore">Explore Now</a>
+            <a href="#" class="btn-started">Get Started</a>
+          </div>
+
+          <ul class="tabs">
+            <li class="active">Graphic Designer</li>
+            <li>Developer</li>
+            <li>SOcial Meadia Marketing</li>
+            <li>Virtual Assistant</li>
+          </ul>
+        </div>
+      </div>
+
+ <div class="col-md-5 image-box">
+        <img
+          src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/974eff36-0327-4101-f5c1-e0b6045fbb00/10"
+          alt="Virtual Resources"
+        />
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    /* ===== Virtual Resources Section ===== */
+.virtual-resources-section {
+  background: #fff;
+  padding: 80px 0;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #1d1d1d;
+  font-family: "AvertalB", sans-serif;
+}
+
+.virtual-resources-section .section-title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.virtual-resources-section .section-title span {
+  color: #2e3090;
+}
+
+.section-text {
+  margin: 20px 0 30px;
+  font-size: 18px;
+  color: #1d1d1d;
+  max-width: 600px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.btn-explore,
+.btn-started {
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-explore {
+  background: #1469b1;
+  color: #fff;
+}
+
+.btn-started {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #1469b1;
+}
+
+.btn-explore:hover {
+  background: #2e3090;
+}
+
+.btn-started:hover {
+  background: #2e3090;
+  color: #fff;
+}
+
+/* Tabs */
+.tabs {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.tabs li {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 6px;
+  color: #1d1d1d;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.tabs li:hover {
+  color: #2e3090;
+}
+
+.tabs .active {
+  color: #1469b1;
+  font-weight: bold;
+  border-bottom: 2px solid #0af;
+}
+
+/* Image Box */
+.image-box img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .virtual-resources-section {
+    text-align: center;
+  }
+
+  .tabs {
+    justify-content: center;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .image-box img {
+    margin-top: 40px;
+  }
+}
+
+  </style>
+                                     </section>
+
+   <section class="outsource-services">
+  <div class="container-fluid">
+    <div class="row g-0">
+      
+      <!-- LEFT IMAGE -->
+      <div class="col-md-4">
+        <img
+          src="https://imagedelivery.net/scna6YbUMApEQkB_P1Vp9g/c6fba7e8-d0cc-4b76-62ee-f7c55d2f2800/10"
+          alt="Developer at work"
+          class="img-fluid h-100 w-100"
+        />
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="col-md-8 d-flex align-items-center bg-blue-gradient text-white p-5 pl-5">
+        <div class="row w-100">
+          
+          <!-- LEFT SIDEBAR LIST -->
+          <div class="col-md-4 mb-4 mb-md-0 g-3">
+            <ul class="services-list list-unstyled">
+              <li class="active"> Social Media Marketing</li>
+              <li>Creative Services</li>
+              <li>Web Development</li>
+              <li>App Development</li>
+              <li>Performance Marketing</li>
+              <li>Search Engine Optimization</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT INFO CHANGES ON CLICK -->
+          <div class="col-md-8">
+            <h2 class="section-heading" id="service-title">
+              Social Media Marketing
+            </h2>
+
+            <p class="section-text-1" id="service-description">
+              Grow your brand with targeted campaigns, content creation, and complete social media management.
+            </p>
+
+            <div class="btn-group mt-4">
+              <a href="#" class="btn-explore">Explore Now</a>
+              <a href="#" class="btn-started-1">Get Started</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+</section>
+
+<style>
+/* ===== OUTSOURCE DIGITAL SERVICES ===== */
+.outsource-services {
+  font-family: "AvertalB", sans-serif;
+  color: #fff;
+}
+
+.bg-blue-gradient {
+  background: radial-gradient(circle at top right, #0b1736, #02050e);
+}
+
+.outsource-services img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.services-list li {
+  font-size: 18px;
+  padding: 10px 0;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: 0.3s;
+  border-left: 3px solid transparent;
+  padding-left: 12px;
+}
+
+.services-list li:hover {
+  opacity: 1;
+}
+
+.services-list li.active {
+  opacity: 1;
+  font-weight: 600;
+  border-left: 3px solid #0af;
+  color: #0af;
+}
+
+.services-list li.active .arrow {
+  color: #0af;
+}
+
+.section-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-text-1 {
+  color: #fff;
+  font-size: 17px;
+  margin-top: 15px;
+  max-width: 550px;
+}
+
+.btn-group a {
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-started-1 {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-started-1:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 992px) {
+  .section-heading {
+    font-size: 36px;
+  }
+
+  .services-list li {
+    font-size: 16px;
+  }
+
+  .outsource-services .col-md-8 {
+    padding: 40px !important;
+    text-align: center;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+}
+</style>
+
+<script>
+const serviceData = {
+  "Social Media Marketing": {
+    title: "Social Media Marketing",
+    description: "Grow your brand with targeted campaigns, content creation, and complete social media management."
+  },
+  "Creative Services": {
+    title: "Creative Services",
+    description: "Our creative team designs visually striking content, branding, and graphics that give your business a premium look."
+  },
+  "Web Development": {
+    title: "Web Development",
+    description: "We build fast, modern, and fully responsive websites using the latest web technologies."
+  },
+  "App Development": {
+    title: "App Development",
+    description: "Custom mobile apps for Android & iOS with smooth UI/UX and optimized performance."
+  },
+  "Performance Marketing": {
+    title: "Performance Marketing",
+    description: "Data-driven paid ads that maximize ROI across Google, Meta, TikTok and more."
+  },
+  "Search Engine Optimization": {
+    title: "Search Engine Optimization",
+    description: "Rank higher on Google with optimized content, backlinks, technical SEO audits and long-term ranking strategy."
+  }
+};
+
+const listItems = document.querySelectorAll(".services-list li");
+const titleBox = document.getElementById("service-title");
+const descBox = document.getElementById("service-description");
+
+listItems.forEach(item => {
+  item.addEventListener("click", () => {
+    document.querySelector(".services-list li.active")?.classList.remove("active");
+    item.classList.add("active");
+
+    const name = item.textContent.replace("→", "").trim();
+
+    titleBox.textContent = serviceData[name].title;
+    descBox.textContent = serviceData[name].description;
+  });
+});
+</script>
+                               
+
+
+
+<!-- Benefits Section                 style="background-image: url(/build/images/hex-pattern.svg)" -->
+<section class="how-it-works home" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-container text-center mt-5" data-aos="fade-up" >
+          <h2>Unlock Unbeatable <br><strong>Benefits</strong></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" data-aos="fade-up">
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>Expertise Access</h3>
+            <p><strong>Unmatched Know-How</strong></p>
+            <p>Dive into a pool of specialized knowledge in AI and Customer Support. Our expertise is tailored to meet the needs of both startups and established tech leaders.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>Innovation Drive</h3>
+            <p><strong>Lead, Don’t Follow</strong></p>
+            <p>With our cutting-edge tech solutions, you'll set new standards and stay ahead of the curve.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>Focus on Core Competencies</h3>
+            <p><strong>Your Main Stage Awaits</strong></p>
+            <p>Leave the tech to us. Focus on what you do best, propelling your business toward its grand vision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4" data-aos="fade-up">
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>Cost Efficiency</h3>
+            <p><strong>Smart Spending</strong></p>
+            <p>Invest wisely. Our cost-effective strategies promise operational savings for your business.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>Scalability</h3>
+            <p><strong>Flex & Flourish</strong></p>
+            <p>Scale with ease, without hiring or infrastructure hassles. Our flexible teams adapt to your needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="info-block">
+          <div class="description">
+            <h3>24/7 Support</h3>
+            <p><strong>Always On, Always Yours</strong></p>
+            <p>Round-the-clock support ensures your customers always have someone to turn to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  AOS.init({
+    duration: 1000,  
+    once: false,      
+    offset: 100
+  });
+</script>
+
+
 </body>
 </html>
 
